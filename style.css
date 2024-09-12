@@ -1,0 +1,34 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#header {
+  border-top: solid red;
+  
+}
+
+#logo {
+  margin-top: 10px;
+  margin-left: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.textbox {
+  align-items: center;
+  width: 150px;
+  padding: 5px 12px 8px;
+  background-color: #e70027;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  float: right;
+}
+
+#navbar {
+  
+}
