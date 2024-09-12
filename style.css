@@ -1,34 +1,139 @@
-* {
-  margin: 0px;
+body {
   padding: 0px;
+  margin: 0px;
+  text-decoration: none;
 }
 
-#header {
+.header {
   border-top: solid red;
-  
+  background-color: hsl(0, 0%, 82%);
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: sans-serif;
 }
 
 #logo {
-  margin-top: 10px;
-  margin-left: 10px;
-    float: left;
-    margin-right: 10px;
+  padding: 10px;
+  width: fit-content;
 }
 
-.textbox {
+.navbar {
+  display: flex;
   align-items: center;
-  width: 150px;
-  padding: 5px 12px 8px;
-  background-color: #e70027;
-  color: #fff;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.3px;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-  float: right;
 }
 
-#navbar {
-  
+.navbar li {
+  display: inline-block;
+}
+
+.navbar a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar a:hover {
+  color: white;
+  background-color: hsl(0, 0%, 32%);
+  transition: .2s ease-in-out;
+}
+
+.content {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 20px;
+}
+
+
+
+.backimg {
+  height: 100vh;
+  background-image: url('https://cdn.discordapp.com/attachments/923183997075464232/1278056612585799761/80gfvt6v9tkd1.png?ex=66e48279&is=66e330f9&hm=36cff1a0373040808af84895a4da004f6ebbe62b482e282b0e2cb9abf42926b5&'); /* Pfad zum Bild anpassen */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Ein leichtes Overlay für bessere Lesbarkeit */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 50px;
+}
+
+.left-section {
+  background-color: #C00;
+  color: white;
+  padding: 30px;
+  max-width: 400px;
+}
+
+.left-section h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.left-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.left-section form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.left-section input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.left-section button {
+  padding: 10px;
+  background-color: #fff;
+  color: #C00;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.left-section a {
+  color: white;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.globe-btn, .search-btn {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  border: hidden;
+}
+
+.globe-btn:hover, .search-btn:hover {
+  background-color: hsl(0, 0%, 32%);
+  transition: .2s ease-in-out;
+}
+
+.globe-btn:hover img, .search-btn:hover img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.globe-btn img, .search-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.bu {
+  padding: 10px;
+  background-color: #fff;
+  color: #C00;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
