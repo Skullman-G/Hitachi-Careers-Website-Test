@@ -1,3 +1,7 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   padding: 0px;
   margin: 0px;
@@ -7,19 +11,31 @@ body {
 .header {
   border-top: solid red;
   background-color: hsl(0, 0%, 82%);
-  padding-right: 10px;
-  padding-left: 10px;
   font-family: sans-serif;
-}
-
-#logo {
-  padding: 10px;
-  width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
 }
 
 .navbar {
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+}
+
+.icon-buttons {
+  margin: 0;
+  padding: 0;
   display: flex;
-  align-items: center;
+  align-items: baseline;
+}
+
+#logo {
+  margin:0;
+  padding:10px 0;
 }
 
 .navbar li {
@@ -43,18 +59,17 @@ body {
   margin: 20px;
 }
 
-
-
 .backimg {
-  height: 100vh;
-  background-image: url('https://cdn.discordapp.com/attachments/923183997075464232/1278056612585799761/80gfvt6v9tkd1.png?ex=66e48279&is=66e330f9&hm=36cff1a0373040808af84895a4da004f6ebbe62b482e282b0e2cb9abf42926b5&'); /* Pfad zum Bild anpassen */
+  height: fit-content;
+  width: fit-content;
+  background-image: url('https://www.hitachi.eu/de-de/wp-content/uploads/2022/11/Connectve-Industries-1920-x-690-scaled.jpg'); 
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Ein leichtes Overlay für bessere Lesbarkeit */
+  background-color: rgba(0, 0, 0, 0.5); 
   width: 100%;
   height: 100%;
   display: flex;
@@ -109,10 +124,10 @@ body {
 }
 
 .globe-btn, .search-btn {
-  width: 50px;
-  height: 50px;
   background-color: rgba(255, 255, 255, 0);
   border: hidden;
+  width: 40px;
+  height: 40px;
 }
 
 .globe-btn:hover, .search-btn:hover {

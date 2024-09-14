@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.header {
+    border-top: solid red;
+    background-color: hsl(0, 0%, 82%);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+  }
+
+  .globe-btn, .search-btn {
+    background-color: rgba(255, 255, 255, 0);
+    border: hidden;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .globe-btn:hover, .search-btn:hover {
+    background-color: hsl(0, 0%, 32%);
+    transition: .2s ease-in-out;
+  }
+  
+  .globe-btn:hover img, .search-btn:hover img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+  }
+  
+  .globe-btn img, .search-btn img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .icon-buttons {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+  }
+  
+
+  .iwie {
+    float: right;
+  }
+
+  #logo {
+    margin:0;
+    padding:10px 0;
+  }
+  
+  .navbar li {
+    display: inline-block;
+  }
+  
+  .navbar a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .navbar a:hover {
+    color: white;
+    background-color: hsl(0, 0%, 32%);
+    transition: .2s ease-in-out;
+  }
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.logo p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.header-icons a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.hero {
+    background-color: #8B0000;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.discover {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f0f0f0;
+}
+
+.discover h3 {
+    font-size: 24px;
+}
+
+#logo {
+    padding: 10px;
+    width: fit-content;
+}
+
+
+.student-info {
+    background-image: url(https://careers.hitachi.com/system/production/assets/149574/original/pattern-bg-red.jpg);
+    background-size: 10000px;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+}
+
+.student-info h2 {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.student-info h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.student-info p {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.6;
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+}
+
+.job-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.job-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(25% - 20px);
+    box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);
+    transition: transform 0.2s ease;
+    height: fit-content;
+}
+
+.job-card:hover {
+    transform: scale(1.05);
+}
+
+.job-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.job-info {
+    padding: 15px;
+    background-color: rgb(243, 20, 20);
+}
+
+.job-info h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #e7d9d9;
+}
+
+.job-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.job-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .job-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .job-card {
+        width: 100%;
+    }
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.moeglichkeiten {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: 1px solid red;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.tab.active {
+    background-color: red;
+    color: white;
+}
+
+.berufsauswahl {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+}
+
+.beruf {
+    text-align: center;
+}
+
+.beruf img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.beruf-info {
+    margin-top: 10px;
+}
+
+.beruf-info h3 {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.beruf-info a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
