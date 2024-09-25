@@ -11,16 +11,14 @@ body {
 }
 
 .header {
-    border-top: solid red;
-    background-color: hsl(0, 0%, 82%);
-    font-family: sans-serif;
-    display: flex;
-    justify-content: flex-start;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none;
-  }
+  border-top: solid red;
+  background-color: hsl(0, 0%, 82%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+}
   
   .navbar {
     margin: 0;
@@ -29,10 +27,9 @@ body {
   }
   
   .icon-buttons {
-    margin: 0;
-    padding: 0;
     display: flex;
-    align-items: baseline;
+    gap: 10px;
+    align-items: center;
   }
   
   #logo {
@@ -61,12 +58,13 @@ body {
     border: hidden;
     width: 40px;
     height: 40px;
-  }
+    cursor: pointer;
+}
   
-  .globe-btn:hover, .search-btn:hover {
-    background-color: hsl(0, 0%, 32%);
-    transition: .2s ease-in-out;
-  }
+.globe-btn:hover, .search-btn:hover {
+  background-color: hsl(0, 0%, 32%);
+  transition: .2s ease-in-out;
+}
   
   .globe-btn:hover img, .search-btn:hover img {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
@@ -75,8 +73,7 @@ body {
   .globe-btn img, .search-btn img {
     width: 100%;
     height: 100%;
-  }
-
+}
 .logo h1 {
     margin: 0;
     font-size: 24px;
@@ -113,6 +110,7 @@ nav ul li a {
     color: white;
     padding: 10px 0px;
     text-align: center;
+    display: flex;
 }
 
 .hero-text h2 {

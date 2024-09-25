@@ -13,49 +13,97 @@ body {
 .header {
     border-top: solid red;
     background-color: hsl(0, 0%, 82%);
-    font-family: sans-serif;
     display: flex;
-    justify-content: flex-start;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
   }
+    
+    .navbar {
+      margin: 0;
+      padding: 0;
+      padding-top: 15px;
+    }
+    
+    .icon-buttons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    #logo {
+      margin:0;
+      padding:10px 0;
+    }
+    
+    .navbar li {
+      display: inline-block;
+    }
+    
+    .navbar a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+    
+    .navbar a:hover {
+      color: white;
+      background-color: hsl(0, 0%, 32%);
+      transition: .2s ease-in-out;
+    }
   
-  .navbar {
-    margin: 0;
-    padding: 0;
-    padding-top: 15px;
+    .globe-btn, .search-btn {
+      background-color: rgba(255, 255, 255, 0);
+      border: hidden;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
   }
-
-  .globe-btn, .search-btn {
-    background-color: rgba(255, 255, 255, 0);
-    border: hidden;
-    width: 40px;
-    height: 40px;
-  }
-  
+    
   .globe-btn:hover, .search-btn:hover {
     background-color: hsl(0, 0%, 32%);
     transition: .2s ease-in-out;
   }
-  
-  .globe-btn:hover img, .search-btn:hover img {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    
+    .globe-btn:hover img, .search-btn:hover img {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    }
+    
+    .globe-btn img, .search-btn img {
+      width: 100%;
+      height: 100%;
+  }
+  .logo h1 {
+      margin: 0;
+      font-size: 24px;
   }
   
-  .globe-btn img, .search-btn img {
-    width: 100%;
-    height: 100%;
+  .logo p {
+      font-size: 12px;
+      margin-top: 5px;
   }
   
-  .icon-buttons {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: baseline;
+  nav ul {
+      list-style: none;
+      display: flex;
   }
   
+  nav ul li {
+      margin-right: 20px;
+  }
+  
+  nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+  }
+  
+  .header-icons a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #000;
+  }
 
   .iwie {
     float: right;
@@ -186,6 +234,14 @@ nav ul li a {
     gap: 20px;
 }
 
+.job-card>a:visited {
+    text-decoration: none;
+}
+
+.job-card>a:link {
+    text-decoration: none;
+}
+
 .job-card {
     background-color: #ffffff;
     border-radius: 10px;
@@ -214,7 +270,7 @@ nav ul li a {
 .job-info h3 {
     font-size: 18px;
     margin: 10px 0;
-    color: #e7d9d9;
+    color: #f1f1f1;
 }
 
 .job-info a {
