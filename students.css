@@ -337,8 +337,7 @@ nav ul li a {
     margin-top: 10px;
 }
 
-.job-info-window .close-btn {
-    display: inline-block;
+/*.job-info-window .close-btn {
     padding: 10px 15px;
     background-color: none;
     color: gray;
@@ -352,8 +351,24 @@ nav ul li a {
 .job-info-window .close-btn:hover {
     background-color: #6d1c1c;
     color: white;
+}*/
+
+.job-info-window .close-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #e02e2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
+.job-info-window .close-btn:hover {
+    background-color: #a41919;
+}
 
 .job-info-window .Kontakt-btn{
     display: inline-block;
@@ -375,7 +390,7 @@ nav ul li a {
 .job-info-window .join-btn {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #33c454;
+    background-color: #38dd38;
     color: white;
     border: none;
     border-radius: 5px;
@@ -386,7 +401,7 @@ nav ul li a {
 }
 
 .job-info-window .join-btn:hover {
-    background-color: #39ab2a;
+    background-color: #4ab821;
 }
 
 
@@ -518,25 +533,47 @@ body {
     text-align: center;
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+/* Container Styling */
+.email-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
 }
 
-.join-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #33c454;
-    color: white;
-    border: none;
+/* Label Styling */
+.email-input-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input-Feld Styling */
+.email-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-top: 20px;
-    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.join-btn:hover {
-    background-color: #42d32f;
+/* Hover-Effekt */
+.email-input:hover {
+    border-color: #666;
+}
+
+/* Fokus-Styling */
+.email-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Placeholder-Styling */
+.email-input::placeholder {
+    color: #aaa;
+    font-style: italic;
 }

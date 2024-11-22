@@ -1,48 +1,38 @@
-function openSection(sectionNumber) {
-    document.querySelectorAll('.berufsauswahl-section').forEach(section => section.classList.add('hidden'));
-
-    const section = document.getElementById(`berufsauswahl-section-${sectionNumber}`);
-    section.classList.remove('hidden');
-
-    const buttons = document.querySelectorAll('.button');
-    buttons.forEach(button => button.classList.remove('active'));
-
-    const clickedButton = buttons[sectionNumber];
-    clickedButton.classList.add('active');
-}
-
-
-
 let activeCardIndex = null;
 
 function clickOnJobCard(index) {
-    removeInfoWindow();
+    removeInfoWindow();  
     const jobCards = document.querySelectorAll('.job-card');
     const selectedCard = jobCards[index];
 
-    jobCards.forEach((card, i) => {
-        card.style.transform = i === index ? 'scale(1.035)' : 'scale(0.85)';
-        card.style.transition = 'transform 0.3s ease';
-    });
-
+  
     if (activeCardIndex === index) {
         activeCardIndex = null;
-        removeTextField();
-    } else {
-        activeCardIndex = index;
-        addInfoWindow(selectedCard);
-        scrollToTextField();
+        jobCards.forEach(card => {
+            card.style.transform = 'scale(1)';
+        });
+        removeTextField(); 
+        return; 
     }
+
+   
+    jobCards.forEach((card, i) => {
+        card.style.transform = i === index ? 'scale(1.035)' : 'scale(0.85)';
+        card.style.transition = 'transform 0.3s ease';  
+    });
+
+    activeCardIndex = index; 
+    addInfoWindow(selectedCard); 
+    scrollToTextField(); 
 }
 
 
 function addInfoWindow(card) {
     const infoContainer = document.getElementById('infoContainer');
-    
 
     if (!infoContainer.querySelector('.job-info-window')) {
-        const infoWindow = document.createElement('div');
-        infoWindow.classList.add('job-info-window');
+        const infoDiv = document.createElement('div');
+        infoDiv.classList.add('job-info-window');
         
         const title = card.querySelector('h3').innerText;
         let description = '';
@@ -94,40 +84,118 @@ function addInfoWindow(card) {
                 applyLink = 'https://example.com/other';
                 break;
         }
+
         const windowTitle = document.createElement('h2');
         windowTitle.innerText = title;
         const windowDescription = document.createElement('p');
         windowDescription.innerText = description;
 
+        // Apply Button
         const applyButton = document.createElement('button');
         applyButton.classList.add('join-btn');
         applyButton.href = applyLink;
         applyButton.innerText = 'Jetzt Bewerben';
         applyButton.target = '_blank';
 
+        // Close Button
         const closeButton = document.createElement('button');
-        closeButton.innerText ="🗙";
+        closeButton.innerText = "🗙";
         closeButton.classList.add('close-btn');
         closeButton.addEventListener('click', removeInfoWindow);
 
-        const KontaktButton = document.createElement('button');
-        KontaktButton.innerText = 'Kontakt';
-        KontaktButton.classList.add('Kontakt-btn');
-        KontaktButton.addEventListener('click', () => {
-            showPopup('Kontakt', 'Hier können Sie uns erreichen! Bitte füllen Sie das Formular aus.');
+        // Contact Button (still functional)
+        const contactButton = document.createElement('button');
+        contactButton.innerText = 'Kontakt';
+        contactButton.classList.add('Kontakt-btn');
+        contactButton.addEventListener('click', () => {
+        
+            /*const emailInputLabel = document.createElement('label');
+            emailInputLabel.innerText = 'juergen.dollmann@urbanandmainlines.com';
+            const emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.placeholder = 'Beispiel@domain.com';
+            emailInput.classList.add('email-input');*/
+
+            const emailInputLabel = document.createElement('label');
+            emailInputLabel.innerText = 'E-Mail:';
+            emailInputLabel.classList.add('email-input-label');
+
+            const emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.placeholder = 'Beispiel@domain.com';
+            emailInput.classList.add('email-input');
+
+            const emailInputContainer = document.createElement('div');
+            emailInputContainer.classList.add('email-input-container');
+
+            emailInputContainer.appendChild(emailInputLabel);
+            emailInputContainer.appendChild(emailInput);
+
+            // Füge das Ganze zum Body (oder einer spezifischen Sektion) hinzu
+            document.body.appendChild(emailInputContainer);
+
+
+            // Image container for profile picture
+            const imageContainer = document.createElement('div');
+            const image = document.createElement('img');
+            image.alt = 'Image of Contact';
+            image.style.width = '20%';  // Adjust size as necessary
+            imageContainer.appendChild(image);
+
+            // Add elements to the info window
+            infoDiv.appendChild(windowTitle);
+            infoDiv.appendChild(windowDescription);
+            infoDiv.appendChild(applyButton);
+            infoDiv.appendChild(contactButton);
+            infoDiv.appendChild(imageContainer);  
+            infoDiv.appendChild(emailInputLabel);  
+            infoDiv.appendChild(emailInput);  
+            infoDiv.appendChild(closeButton);
+
+            infoContainer.appendChild(infoDiv);
         });
 
+        
 
-        infoWindow.appendChild(windowTitle);
-        infoWindow.appendChild(windowDescription);
-        infoWindow.appendChild(applyButton);
-        infoWindow.appendChild(KontaktButton);
-        infoWindow.appendChild(closeButton);
+        infoDiv.appendChild(windowTitle);
+        infoDiv.appendChild(windowDescription);
+        infoDiv.appendChild(applyButton);
+        infoDiv.appendChild(contactButton);
+        infoDiv.appendChild(closeButton);
 
-        infoContainer.appendChild(infoWindow);
+        infoContainer.appendChild(infoDiv);
     }
 }
 
+function showPopupWithImage(title, description, imageUrl) {
+    const popup = document.createElement('div');
+    popup.classList.add('popup-window');
+
+    const popupTitle = document.createElement('h2');
+    popupTitle.innerText = title;
+
+    const popupDescription = document.createElement('p');
+    popupDescription.innerText = description;
+
+    const popupImage = document.createElement('img');
+    popupImage.src = imageUrl;
+    popupImage.alt = 'Contact Image';  
+    popupImage.style.width = '100%';  
+
+    const closePopupButton = document.createElement('button');
+    closePopupButton.innerText = "🗙";
+    closePopupButton.classList.add('close-btn');
+    closePopupButton.addEventListener('click', () => {
+        popup.remove();  
+    });
+
+    popup.appendChild(popupTitle);
+    popup.appendChild(popupDescription);
+    popup.appendChild(popupImage);
+    popup.appendChild(closePopupButton);
+
+    document.body.appendChild(popup);
+}
 
 function removeInfoWindow() {
     const infoContainer = document.getElementById('infoContainer');
@@ -137,7 +205,6 @@ function removeInfoWindow() {
         existingInfoWindow.remove();
     }
 }
-
 
 function toggleCard(card) {
     const isExpanded = card.classList.contains('expanded');
@@ -149,39 +216,10 @@ function toggleCard(card) {
     }
 }
 
-
 function scrollToTextField() {
     const textFieldContainer = document.getElementById('infoContainer');
     textFieldContainer.scrollIntoView({
         behavior: 'smooth',
         block: 'start'  
     });
-}
-
-
-
-
-
-function showPopup(title, description) {
-    const popup = document.createElement('div');
-    popup.classList.add('popup-window');
-
-    const popupTitle = document.createElement('h2');
-    popupTitle.innerText = title;
-
-    const popupDescription = document.createElement('p');
-    popupDescription.innerText = description;
-
-    const closePopupButton = document.createElement('button');
-    closePopupButton.innerText = "🗙";
-    closePopupButton.classList.add('close-btn');
-    closePopupButton.addEventListener('click', () => {
-        popup.remove();
-    });
-
-    popup.appendChild(popupTitle);
-    popup.appendChild(popupDescription);
-    popup.appendChild(closePopupButton);
-    
-    document.body.appendChild(popup);
 }
