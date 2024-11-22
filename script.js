@@ -43,7 +43,26 @@ function addInfoWindow(card) {
         infoWindow.classList.add('job-info-window');
         
         const title = card.querySelector('h3').innerText;
-        const description = `Details über den Beruf ${title}: Hier könnten ausführliche Informationen über den Beruf stehen, die Aufgaben und die Anforderungen.`;
+        let description = '';
+
+        switch (title) {
+            case 'Elektrotechnik':
+                description = `Details über den Beruf ${title}: Elektrotechniker arbeiten an der Entwicklung, Installation und Wartung von elektrischen Systemen und Geräten.`;
+                break;
+            case 'Embedded Systems':
+                description = `Details über den Beruf ${title}: Embedded Systems Entwickler arbeiten an Software und Hardware für spezialisierte Geräte wie Smartphones, Autos oder medizinische Geräte.`;
+                break;
+            case 'Informationstechnik':
+                description = `Details über den Beruf ${title}: Informatik für Anwendungsentwicklung erstellen und pflegen Softwarelösungen für unterschiedliche Branchen.`;
+                break;
+            case 'Wirtschaftsingenieurwesen':
+                description = `Details über den Beruf ${title}: Wirtschaftsingenieure kombinieren technisches Wissen mit betriebswirtschaftlichen Kenntnissen, um Projekte effizient zu steuern.`;
+                break;
+            default:
+                description = `Details über den Beruf ${title}: Hier könnten ausführliche Informationen über den Beruf stehen.`;
+                break;
+        }
+
 
         const windowTitle = document.createElement('h2');
         windowTitle.innerText = title;
