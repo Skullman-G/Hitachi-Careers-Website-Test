@@ -10,6 +10,7 @@ function openSection(sectionNumber) {
 let activeCardIndex = null;
 
 function clickOnJobCard(index) {
+    removeInfoWindow();
     const jobCards = document.querySelectorAll('.job-card');
     const selectedCard = jobCards[index];
 
@@ -30,7 +31,7 @@ function clickOnJobCard(index) {
             card.style.transition = 'transform 0.3s ease';
         });
         activeCardIndex = index;
-        addTextField(selectedCard);
+        addInfoWindow(selectedCard);
     }
 }
 
