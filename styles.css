@@ -328,6 +328,8 @@ nav ul li a {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative; /* Für den Schließen-Button */
+  height: 200px; /* Standardhöhe */
 }
 
 .job-card img {
@@ -358,4 +360,30 @@ nav ul li a {
 .job-info {
   padding: 15px;
   flex-grow: 1;
+}
+
+.job-card.expanded {
+  height: 400px; 
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.job-card .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.job-card .close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

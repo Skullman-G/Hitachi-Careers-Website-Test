@@ -5,13 +5,16 @@ function openSection(sectionNumber) {
     document.getElementById(`berufsauswahl-section-${sectionNumber}`);
 }
 
+
+
+
 function clickOnJobCard(index) {
     const jobCards = document.querySelectorAll('.job-card');
 
     jobCards.forEach((card, i) => {
         if (i === index) {
             card.style.transform = 'scale(1.1)';
-            card.style.transition = 'transform 0.3s ease'; // sanfte Animation
+            card.style.transition = 'transform 0.3s ease'; 
         } else {
             card.style.transform = 'scale(1)';
         }
@@ -32,20 +35,29 @@ function toggleCard(card) {
 }
 
 
-function toggleJobCard(event) {
-    const jobCard = event.currentTarget;
-    const allJobCards = document.querySelectorAll('.job-card');
+function toggleJobCard(index) {
+    const jobCards = document.querySelectorAll('.job-card');
+    const selectedCard = jobCards[index];
 
-    allJobCards.forEach(card => {
-        if (card !== jobCard) {
-            card.classList.remove('expanded');
-        }
+    jobCards.forEach(card => {
+        card.classList.remove('expanded');
     });
 
-    jobCard.classList.toggle('expanded');
+    selectedCard.classList.add('expanded');
+
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'X';
+    closeButton.classList.add('close-btn');
+    selectedCard.appendChild(closeButton);
+
+    closeButton.addEventListener('click', () => {
+        selectedCard.classList.remove('expanded');
+        closeButton.remove(); 
+    });
 }
 
-document.querySelectorAll('.job-card').forEach(card => {
-    card.addEventListener('click', toggleJobCard);
+document.querySelectorAll('.job-card').forEach((card, index) => {
+    card.addEventListener('click', () => toggleJobCard(index));
 });
+
 

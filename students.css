@@ -261,7 +261,7 @@ nav ul li a {
 }
 
 .job-card:hover {
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
 }
 
 .job-card img {
