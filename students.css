@@ -189,12 +189,16 @@ nav ul li a {
 }
 
 .discover {
-    text-align: center;
+    background-color: black;    
     padding: 40px 0;
     background-color: #f0f0f0;
+    border-top: solid red;
 }
 
 .discover h3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     font-size: 24px;
 }
 
@@ -242,7 +246,7 @@ nav ul li a {
     gap: 20px;
     padding-left: 30px;
     padding-right: 30px; 
-    margin: 0 auto; 
+    margin: 10px; 
 }
 
 .job-card>a:visited {
@@ -253,15 +257,24 @@ nav ul li a {
     text-decoration: none;
 }
 
+.berufsauswahl-section {
+    padding: 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between; 
+}
+
 .job-card {
     background-color: #ffffff;
     border-radius: 20px;
     overflow: hidden;
-    width: calc(25% - 20px);
     /*box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);*/
     transition: transform 0.3s ease;
     transform: scale(1);
     height: fit-content;
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px;
 }
 
 .job-card:hover {
@@ -327,20 +340,54 @@ nav ul li a {
 .job-info-window .close-btn {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #f44336;
+    background-color: none;
+    color: gray;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.job-info-window .close-btn:hover {
+    background-color: #6d1c1c;
+    color: white;
+}
+
+
+.job-info-window .Kontakt-btn{
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #8f8f8f;
     color: white;
     border: none;
     border-radius: 5px;
     margin-top: 20px;
     cursor: pointer;
+    margin-right: 10px;
 }
 
-.job-info-window .close-btn:hover {
-    background-color: #d32f2f;
+.job-info-window .Kontakt-btn:hover {
+    background-color: #535353;
 }
 
 
+.job-info-window .join-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #33c454;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
 
+.job-info-window .join-btn:hover {
+    background-color: #39ab2a;
+}
 
 
 
@@ -355,8 +402,6 @@ nav ul li a {
         width: 100%;
     }
 }
-
-
 
 body {
     font-family: Arial, sans-serif;
@@ -433,5 +478,65 @@ body {
 
 .highlight {
     font-size: 26px;
+    margin-left: 10px;
     font-weight: bolder;
+}
+
+
+.logo-left {
+    transform: scale(2);
+    float: left;
+    margin-left: 50px;
+}
+
+.logo-right {
+    float: center;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.join-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #33c454;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.join-btn:hover {
+    background-color: #42d32f;
 }
