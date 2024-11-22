@@ -9,30 +9,38 @@
 </head>
 
 <body>
-    <nav class="header">
-        <a id="logo" href="index.html"><img src="./media/images/hitachi-logo.svg" alt="Logo"></a>
+    <script src="script.js"></script>
+    <nav class="header" role="navigation">
+        <a class="logo" href="index.html">
+            <img src="./media/images/hitachi-logo.svg" alt="Hitachi Logo">
+        </a>
         <div class="navbar">
-            <ul class="iwie">
-                <li><a>About us</a></li>
-                <li><a href="carrer.html">Careers</a></li>
-                <li><a>Other Entries</a></li>
+            <ul class="nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="other.html">Other Entries</a></li>
             </ul>
         </div>
         <div class="icon-buttons">
-            <button class="globe-btn"><img src="./media/images/globe.svg" alt="globe" /></button>
-            <button class="search-btn"><img src="./media/images/search.svg" alt="search" /></button>
+            <a href="language.html" class="globe-btn" aria-label="Change Language">
+                <img src="./media/images/globe.svg" alt="Language Selector">
+            </a>
+            <button class="search-btn" aria-label="Search">
+                <img src="./media/images/search.svg" alt="Search">
+            </button>
         </div>
     </nav>
+    
+    
 
     <div class="student-info">
         <h2>Karriere bei Hitachi</h2>
         <h1>Ausbildung und duales Studium mit höchster Spannung</h1>
         <p>
-            Die Mission von Hitachi ist es, durch die Entwicklung überlegener, origineller Technologien und Produkte zur
-            Gesellschaft beizutragen. Um dies zu erreichen, brauchen wir innovative und entschlossene Menschen, die
-            unseren Gründungsgeist weiterführen: Harmonie, Aufrichtigkeit und Pioniergeist.
-            Wir sind ein weltweit führender Innovator im Bereich Klimaschutz und helfen Regierungen, Städten und Kunden,
-            ihren CO2-Ausstoß zu reduzieren. Wir suchen Pioniere, die zu unserer Mission beitragen können.
+            Hitachi Social Innovation Business kombiniert
+            über 100 Jahre Betriebstechnologie mit über 60 Jahren IT-Erfahrung, um Innovationen gegen den Klimawandel zu liefern.  
+            Unser Ziel ist eine nachhaltige Welt und das Wohlbefinden der Menschen durch digitale und grüne Technologien.  
+            Wir verbinden physische und digitale Lösungen in Energie und Mobilität, um Netto-Null-Emissionen zu erreichen.  
         </p>
     </div>
 
@@ -43,59 +51,55 @@
 
 
     <section class="moeglichkeiten">
-        <div class="button-group-filter">
-            <button class="button active">Duales Studium</button>
-            <button class="button">Ausbildung</button>
-            <button class="button">Werkstudenten</button>
-            <button class="button">Direkteinstieg</button>
-            <button class="button">Praktikum</button>
-            <button class="button">Traineeprogramm</button>
-            <button class="button">Diplomarbeit</button>
-            <button class="button">Ferienjobs</button>
+        <div class="tabs-filter">
+            <button class="button" onclick="openSection(0)">Duales Studium</button>
+            <button class="button" onclick="openSection(1)">Ausbildung</button>
+            <button class="button" onclick="openSection(2)">Werkstudenten</button>
+            <button class="button" onclick="openSection(3)">Praktikum</button>
+            <button class="button" onclick="openSection(4)">BBerufsbegleitender Master</button>
+            <button class="button" onclick="openSection(5)">Ferienjobs</button>
         </div>
     </section>
     
+    <section class="berufsauswahl-section 1">
+            <button class="job-card" onclick="clickOnJobCard(0)">
+                <a href="">
+                    <img src="https://abi.de/cdn/2a/b4/Elektroniker-fuer-Betriebstechnik-sind-ueberall-da-gefragt-wo-Anlagen-installiert-und-gewartet-werd-2ab436f96419118adb0935bcc7b733f316cd06dc.jpg"
+                        alt="Elektroniker für Betriebstechnik">
+                    <div class="job-info">
+                        <h3>Elektrotechnik</h3>
+                    </div>
+                </a>
+            </button>
 
-    <section class="berufsauswahl">
-        <div class="job-card">
-            <a href="eTech.html">
-                <img src="https://abi.de/cdn/2a/b4/Elektroniker-fuer-Betriebstechnik-sind-ueberall-da-gefragt-wo-Anlagen-installiert-und-gewartet-werd-2ab436f96419118adb0935bcc7b733f316cd06dc.jpg"
-                    alt="Elektroniker für Betriebstechnik">
+            <button class="job-card" onclick="clickOnJobCard(1)">
+                <a href="">
+                    <img src="https://de0l6xxj0hhe7.cloudfront.net/feature/0001/05/a8adac1a1ca9f0a4c5f9b5989974083430ad8f90.jpeg"
+                        alt="Elektroniker für Energie- und Gebäudetechnik">
+                </a>
                 <div class="job-info">
-                    <h3>Elektrotechnik</h3>
+                    <h3>Embedded Systems</h3>
+
                 </div>
-            </a>
-        </div>
+            </button>
 
-        <div class="job-card">
-            <a href="#">
-                <img src="https://de0l6xxj0hhe7.cloudfront.net/feature/0001/05/a8adac1a1ca9f0a4c5f9b5989974083430ad8f90.jpeg"
-                    alt="Elektroniker für Energie- und Gebäudetechnik">
-            </a>
-            <div class="job-info">
-                <h3>Embedded Systems</h3>
+            <button class="job-card" onclick="clickOnJobCard(2)">
+                <img src="https://berufswelten-energie-wasser.de/wp-content/uploads/2022/11/fachinformatiker-anwendungsentwicklung.jpg">
+                    alt="Fachinformatiker">
+                <div class="job-info">
+                    <h3>Informationstechnik</h3>
+                    <a href="#"></a>
+                </div>
+            </button>
 
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="https://berufswelten-energie-wasser.de/wp-content/uploads/2022/11/fachinformatiker-anwendungsentwicklung.jpg"
-                alt="Fachinformatiker">
-            <div class="job-info">
-                <h3>Informationstechnik</h3>
-                <a href="#"></a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="https://daa-neuwied.de/fileadmin/Bilderpool/Ausbildung_und_Umschulung/Umschulung_48716961_1200x800.jpg"
-                alt="Kaufleute für IT-System-Management">
-            <div class="job-info">
-                <h3>BWL</h3>
-                <a href="#"></a>
-            </div>
-        </div>
-
+            <button class="job-card" onclick="clickOnJobCard(3)">
+                <img src="https://daa-neuwied.de/fileadmin/Bilderpool/Ausbildung_und_Umschulung/Umschulung_48716961_1200x800.jpg"
+                    alt="Kaufleute für IT-System-Management">
+                <div class="job-info">
+                    <h3>Wirtschaftsingenieurwesen</h3>
+                    <a href="#"></a>
+                </div>
+            </button>
     </section>
 
 </body>

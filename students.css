@@ -251,7 +251,7 @@ nav ul li a {
     border-radius: 10px;
     overflow: hidden;
     width: calc(25% - 20px);
-    box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);
+    /*box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);*/
     transition: transform 0.2s ease;
     height: fit-content;
 }
@@ -287,7 +287,6 @@ nav ul li a {
     text-decoration: underline;
 }
 
-/* Responsiveness */
 @media (max-width: 768px) {
     .job-card {
         width: calc(50% - 20px);
@@ -313,30 +312,41 @@ body {
     margin: 20px 0;
 }
 
-.tabs {
+.tabs-filter {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; 
 }
 
-.tab {
+.button {
     padding: 10px 20px;
     border: 1px solid red;
     margin-right: 10px;
+    margin-bottom: 10px; 
     cursor: pointer;
     border-radius: 100px;
+    background-color: white; 
+    color: red; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
-.tab.active {
+.button:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+}
+
+.button.active {
     background-color: red;
     color: white;
 }
 
-.berufsauswahl {
+
+.berufsauswahl-section {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-
 }
 
 .beruf {
