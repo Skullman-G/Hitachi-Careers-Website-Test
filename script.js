@@ -1,3 +1,7 @@
+
+
+
+
 let activeCardIndex = null;
 
 function clickOnJobCard(index) {
@@ -116,23 +120,40 @@ function addInfoWindow(card) {
             emailInput.placeholder = 'Beispiel@domain.com';
             emailInput.classList.add('email-input');*/
 
-            const emailInputLabel = document.createElement('label');
-            emailInputLabel.innerText = 'E-Mail:';
-            emailInputLabel.classList.add('email-input-label');
+            const contactInfoContainer = document.createElement('div');
+            contactInfoContainer.classList.add('contact-info-container');
 
-            const emailInput = document.createElement('input');
-            emailInput.type = 'email';
-            emailInput.placeholder = 'Beispiel@domain.com';
-            emailInput.classList.add('email-input');
+            const nameLabel = document.createElement('label');
+            nameLabel.innerText = 'Name: Jürgen Dollmann';
+            nameLabel.classList.add('contact-label');
 
-            const emailInputContainer = document.createElement('div');
-            emailInputContainer.classList.add('email-input-container');
+            const emailLabel = document.createElement('label');
+            emailLabel.innerText = 'E-Mail: juergen.dollmann@urbanandmainlines.com';
+            emailLabel.classList.add('contact-label');
 
-            emailInputContainer.appendChild(emailInputLabel);
-            emailInputContainer.appendChild(emailInput);
+            const phoneLabel = document.createElement('label');
+            phoneLabel.innerText = 'Telefon: +49 000 000 000';
+            phoneLabel.classList.add('contact-label');
 
-            // Füge das Ganze zum Body (oder einer spezifischen Sektion) hinzu
-            document.body.appendChild(emailInputContainer);
+
+
+            contactInfoContainer.appendChild(nameLabel);
+            contactInfoContainer.appendChild(emailLabel);
+            contactInfoContainer.appendChild(phoneLabel);
+
+            document.body.appendChild(contactInfoContainer);
+
+
+            // Füge die Elemente in den Container ein
+            formContainer.appendChild(emailInputLabel);
+            formContainer.appendChild(nameInput);
+            formContainer.appendChild(phoneInput);
+            formContainer.appendChild(emailInput);
+            formContainer.appendChild(messageInput);
+
+            // Füge den Container zum Body (oder einer bestimmten Sektion) hinzu
+            document.body.appendChild(formContainer);
+
 
 
             // Image container for profile picture
@@ -222,4 +243,19 @@ function scrollToTextField() {
         behavior: 'smooth',
         block: 'start'  
     });
+}
+
+function openSection(sectionNumber) {
+    console.log(`Section ${sectionNumber} clicked`);
+
+    // Existing section handling logic
+    document.querySelectorAll('.berufsauswahl-section').forEach(section => section.classList.add('hidden'));
+    const section = document.getElementById(`berufsauswahl-section-${sectionNumber}`);
+    section.classList.remove('hidden');
+
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => button.classList.remove('active'));
+
+    const clickedButton = buttons[sectionNumber];
+    clickedButton.classList.add('active');
 }
