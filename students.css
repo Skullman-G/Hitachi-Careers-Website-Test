@@ -53,6 +53,10 @@ body {
     transition: .2s ease-in-out;
 }
 
+.hidden {
+    display: hidden;
+}
+
 .globe-btn,
 .search-btn {
     background-color: rgba(255, 255, 255, 0);
@@ -252,7 +256,7 @@ nav ul li a {
     overflow: hidden;
     width: calc(25% - 20px);
     /*box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);*/
-    transition: transform 0.2s ease;
+    /*transition: transform 0.2s ease;*/
     height: fit-content;
 }
 
