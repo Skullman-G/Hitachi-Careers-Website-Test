@@ -252,7 +252,7 @@ nav ul li a {
 
 .job-card {
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     width: calc(25% - 20px);
     /*box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);*/
@@ -262,7 +262,7 @@ nav ul li a {
 }
 
 .job-card:hover {
-    transform: scale(1.05);*/
+    transform: scale(1.02);
 }
 
 .job-card img {
@@ -291,6 +291,53 @@ nav ul li a {
 .job-info a:hover {
     text-decoration: underline;
 }
+
+#infoContainer {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.job-info-window {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.job-info-window h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.job-info-window p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.job-info-window .close-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.job-info-window .close-btn:hover {
+    background-color: #d32f2f;
+}
+
+
+
+
+
 
 @media (max-width: 768px) {
     .job-card {
@@ -377,4 +424,9 @@ body {
     text-decoration: none;
     color: red;
     font-weight: bold;
+}
+
+.highlight {
+    font-size: 26px;
+    font-weight: bolder;
 }
