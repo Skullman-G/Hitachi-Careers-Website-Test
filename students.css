@@ -533,7 +533,6 @@ body {
     text-align: center;
 }
 
-/* Container für das Formular */
 .form-container {
     display: flex;
     flex-direction: column;
@@ -548,7 +547,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Container-Styling */
 .contact-info-container {
     max-width: 400px;
     margin: 20px auto;
