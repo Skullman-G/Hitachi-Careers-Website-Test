@@ -135,7 +135,7 @@ function addInfoWindow(card) {
             phoneLabel.innerText = 'Telefon: +49 000 000 000';
             phoneLabel.classList.add('contact-label');
 
-
+                
 
             contactInfoContainer.appendChild(nameLabel);
             contactInfoContainer.appendChild(emailLabel);
