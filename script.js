@@ -2,7 +2,8 @@ function openSection(sectionNumber) {
     document.querySelectorAll('.berufswahl-section')
     .forEach(section => section.classList.add('hidden'));
 
-    document.getElementById(`berufsauswahl-section-${sectionNumber}`);
+    const section = document.getElementById(`berufsauswahl-section-${sectionNumber}`);
+    section.classList.remove('hidden');
 }
 
 
@@ -14,10 +15,10 @@ function clickOnJobCard(index) {
     jobCards.forEach((card, i) => {
         if (i === index) {
             card.style.transform = 'scale(1.1)';
-            card.style.transition = 'transform 0.3s ease'; 
         } else {
-            card.style.transform = 'scale(1)';
+            card.style.transform = 'scale(0.9)';
         }
+        card.style.transition = 'transform 0.3s ease';
     });
 }
 
@@ -59,5 +60,3 @@ function toggleJobCard(index) {
 document.querySelectorAll('.job-card').forEach((card, index) => {
     card.addEventListener('click', () => toggleJobCard(index));
 });
-
-

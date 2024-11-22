@@ -53,8 +53,8 @@ body {
     transition: .2s ease-in-out;
 }
 
-.hidden {
-    display: hidden;
+.hidden * {
+    display: none;
 }
 
 .globe-btn,
@@ -256,12 +256,13 @@ nav ul li a {
     overflow: hidden;
     width: calc(25% - 20px);
     /*box-shadow: 0 4px 8px rgba(19, 18, 18, 0.1);*/
-    /*transition: transform 0.2s ease;*/
+    transition: transform 0.3s ease;
+    transform: scale(1);
     height: fit-content;
 }
 
 .job-card:hover {
-    /*transform: scale(1.05);*/
+    transform: scale(1.05);*/
 }
 
 .job-card img {
